@@ -1,0 +1,136 @@
+.header_gradient {
+    display: flex;
+    flex-direction: column;
+    max-width: 1196px;
+    height: 1121px;
+    background-clip: content-box;
+    margin: auto;
+    margin-top: 61px;
+
+    background-image: linear-gradient(to bottom, #ffffff, #666666);
+    
+  }
+  
+  .header_gradient_main {
+    content: "";
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    width: 1192px;
+    height: 1117px;
+    background-color: #666666;
+    margin: auto;
+    margin-top: 2px;
+    overflow-y: auto;
+
+
+  }
+  
+
+  .main_heading p{
+    font-size: 56px;
+    margin:40px 0px 0 121px ;
+    color: #43F09F;
+    font-weight: bold;
+  }
+
+  .main_heading {
+    position: sticky;
+    top: 0px;
+    /* border: 2px solid red; */
+    z-index: 4;
+
+  }
+ 
+  .vector{
+    position: absolute;
+    padding-left:800px;
+    padding-top: 300px;
+    z-index: -12;
+  }
+
+  .skills_section p{
+    font-size: 35px;
+    margin:70px 0px 0 221px ;
+    color: #43F09F;
+  }
+  .skills_section h4{
+    font-size: 20px;
+    margin:70px 0px 0 221px ;
+    color: #ffffff;
+    font-weight: 100;
+    line-height: 2.5rem;
+    width: 500px;
+    /* border:2px solid rgb(12, 186, 2); */
+    margin-right: 40px;
+
+  }
+.experience_section p{
+    font-size: 35px;
+    margin:70px 0px 0 221px ;
+    color: #43F09F;
+    /* border: 2px solid red;; */
+
+  }
+
+  .skills_section {
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    
+  }
+
+  .experience_section {
+    display: flex;
+    flex-direction: row;
+    /* border: 2px solid red; */
+    justify-content:space-between;
+  }
+
+  .experience {
+    width: 500px;
+    margin-top: 70px;
+    margin-right: 40px;
+    color: white;
+    height: fit-content;
+    /* border:2px solid rgb(12, 186, 2); */
+    line-height: 2rem;
+  }
+
+  .experience h4 {
+    font-weight:100;
+    font-size: 18px;
+    color: white;
+    margin-top: 10px;
+    height: fit-content;
+    padding-bottom: 20px;
+
+
+  }
+
+  .header_gradient_main::-webkit-scrollbar {
+    width: 6px;
+    /* padding-right: 10px; */
+  }
+  
+  /* Track */
+  .header_gradient_main::-webkit-scrollbar-track {
+    /* box-shadow: inset 0 0 5px grey;  */
+    border-radius: 5px;
+  }
+   
+  /* Handle */
+  .header_gradient_main::-webkit-scrollbar-thumb {
+    background: #43F09F; 
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  .header_gradient_main::-webkit-scrollbar-thumb:hover {
+    background: #43F09F; 
+  }
+
+  .inner_section{
+    margin-top: 30px;
+  }
+

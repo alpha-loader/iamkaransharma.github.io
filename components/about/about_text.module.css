@@ -1,0 +1,15 @@
+.text {
+    width: 370px;
+    height: 320px;
+    /* border: 2px solid red; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .text h4 {
+    font-size: 26px;
+    font-weight: 10;
+    color: white;
+    padding: 10px;
+  }

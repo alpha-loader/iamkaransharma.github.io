@@ -1,0 +1,8 @@
+.root {
+    box-sizing: border-box;
+    margin:0px;
+    padding:0px;
+    height: fit-content;
+    width: 100vw;
+    background-image: linear-gradient(to right, #363E37 , #18272F);
+}
