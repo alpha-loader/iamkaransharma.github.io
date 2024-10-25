@@ -14,7 +14,7 @@ export default function AboutImage(props: {
         src={`/assets/${props.src}`}
         alt={props.alt}
         priority
-        height="182"
+        height="482"
         width="370"
       ></Image>
     </div>

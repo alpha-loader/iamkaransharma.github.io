@@ -1,7 +1,9 @@
+
 import classes from "@/components/header/header.module.css";
 import Image from "next/image";
 import signature from "@/public/assets/signature.svg";
 import heroImage from "@/public/assets/heroImage.png";
+
 
 export default function Header() {
   return (
@@ -10,14 +12,14 @@ export default function Header() {
         <main className={classes.header_gradient_main}>
           <span className={classes.hero_content}>
             <div>
-              <p>Hi. I’m Name.</p>
+              <p>Hi. I&apos;m Name.</p>
               <p>{`A <Fullstack />`}</p>
               <p>Developer.</p>
             </div>
             <section>
               <h3>
-                "Great things in business are never done by one person. They're
-                done by a team of people”
+              &quot;Great things in business are never done by one person. They&lsquo;re
+                done by a team of people&quot;
               </h3>
               <h3 className={classes.author}>&#x2022; Steve Jobs</h3>
             </section>
@@ -26,8 +28,7 @@ export default function Header() {
               alt="Signature"
               priority
               className={classes.signature}
-              height="113"
-              width="218"
+            
             ></Image>
           </span>
           <span className={classes.hero_image}>
@@ -35,8 +36,6 @@ export default function Header() {
               src={heroImage}
               alt="Hero Image"
               priority
-              height='666'
-              width='511'
             ></Image>
           </span>
         </main>

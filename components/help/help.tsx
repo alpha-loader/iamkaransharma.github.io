@@ -8,7 +8,7 @@ export default function Help() {
     <>
       <div className={classes.outer_box} >
         <div className={classes.up_vector}>
-          <Image src={upperBracket} alt="Vector Graphics" priority></Image>
+          <Image src={upperBracket} alt="Vector Graphics" priority fill></Image>
         </div>
         <div className={classes.header_gradient}>
           <main className={classes.header_gradient_main}>
@@ -62,7 +62,7 @@ export default function Help() {
           </main>
         </div>
         <div className={classes.down_vector}>
-          <Image src={lowerBracket} alt="Vector Graphics" priority></Image>
+          <Image src={lowerBracket} alt="Vector Graphics" priority fill></Image>
         </div>
       </div>
     </>

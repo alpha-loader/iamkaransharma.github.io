@@ -1,12 +1,12 @@
-'use client';
+"use client";
 
 import classes from "@/components/skills/skills.module.css";
 import Image from "next/image";
-import vectorRectangle from "@/public/assets/vectorrectangle.svg";
+import vectorRectangle from "@/public/assets/Group 2.png";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 
-let skillsData = {
+const skillsData = {
   slills: [
     "React",
     "NodeJS",
@@ -46,62 +46,82 @@ let skillsData = {
 };
 
 export default function Skills() {
-    const scrollY = useRef<HTMLDivElement>(null);
-    const { scrollYProgress } = useScroll({ container: scrollY });
-  const opacity = useTransform(scrollYProgress, [0, 0.06, 0.2, 1], [1, 0.5, 0.07, 0]);
+  const scrollY = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({ container: scrollY });
+  const opacity = useTransform(
+    scrollYProgress,
+    [0, 0.06, 0.2, 1],
+    [1, 0.5, 0.07, 0]
+  );
 
   return (
     <>
-      <div className={classes.header_gradient}>
-        <main className={classes.header_gradient_main} ref={scrollY}>
-          <div className={classes.vector}>
-            <Image src={vectorRectangle} alt="Vector Graphics" priority></Image>
-          </div>
-          <div className={classes.main_heading}>
-            <p>Skills & Experience</p>
-          </div>
-
-          <motion.div
-            style={{ opacity: opacity }}
-            className={classes.skills_section}
-          >
-            <p>Skills.</p>
-            <h4>{skillsData.slills.map((item) => `${item} | `)}</h4>
-          </motion.div>
-
-          <div className={classes.experience_section}>
-            <p>Experience.</p>
-            <div className={classes.experience}>
-              <section
-                key={skillsData.experienceBadge1.year}
-                className={classes.inner_section}
-              >
-                <h2 key={1}>{skillsData.experienceBadge1.year}</h2>
-                <h2 key={2}>{skillsData.experienceBadge1.heading}</h2>
-                <h4 key={3}>{skillsData.experienceBadge1.content}</h4>
-              </section>
-
-              <section
-                key={skillsData.experienceBadge2.year}
-                className={classes.inner_section}
-              >
-                <h2 key={1}>{skillsData.experienceBadge2.year}</h2>
-                <h2 key={2}>{skillsData.experienceBadge2.heading}</h2>
-                <h4 key={3}>{skillsData.experienceBadge2.content}</h4>
-              </section>
-
-              <section
-                key={skillsData.experienceBadge3.year}
-                className={classes.inner_section}
-              >
-                <h2 key={1}>{skillsData.experienceBadge3.year}</h2>
-                <h2 key={2}>{skillsData.experienceBadge3.heading}</h2>
-                <h4 key={3}>{skillsData.experienceBadge3.content}</h4>
-              </section>
-
+      <div
+        style={{
+          border: "2px solid transparent",
+          width: "100vw",
+          height: "fit-content",
+          margin: "auto",
+          marginBottom: "0px",
+          position: "relative",
+        }}
+      >
+        <div className={classes.header_gradient}>
+          <main className={classes.header_gradient_main} ref={scrollY}>
+            <div className={classes.main_heading}>
+              <p>Skills & Experience</p>
             </div>
-          </div>
-        </main>
+
+            <motion.div
+              style={{ opacity: opacity }}
+              className={classes.skills_section}
+            >
+              <p>Skills.</p>
+              <h4>{skillsData.slills.map((item) => `${item} | `)}</h4>
+            </motion.div>
+
+            <div className={classes.experience_section}>
+              <p>Experience.</p>
+              <div className={classes.experience}>
+                <section
+                  key={skillsData.experienceBadge1.year}
+                  className={classes.inner_section}
+                >
+                  <h2 key={1}>{skillsData.experienceBadge1.year}</h2>
+                  <h2 key={2}>{skillsData.experienceBadge1.heading}</h2>
+                  <h4 key={3}>{skillsData.experienceBadge1.content}</h4>
+                </section>
+
+                <section
+                  key={skillsData.experienceBadge2.year}
+                  className={classes.inner_section}
+                >
+                  <h2 key={1}>{skillsData.experienceBadge2.year}</h2>
+                  <h2 key={2}>{skillsData.experienceBadge2.heading}</h2>
+                  <h4 key={3}>{skillsData.experienceBadge2.content}</h4>
+                </section>
+
+                <section
+                  key={skillsData.experienceBadge3.year}
+                  className={classes.inner_section}
+                >
+                  <h2 key={1}>{skillsData.experienceBadge3.year}</h2>
+                  <h2 key={2}>{skillsData.experienceBadge3.heading}</h2>
+                  <h4 key={3}>{skillsData.experienceBadge3.content}</h4>
+                </section>
+              </div>
+            </div>
+          </main>
+        </div>
+
+        <div className={classes.vector}>
+          <Image
+            src={vectorRectangle}
+            alt="Vector Graphics"
+            priority
+            fill
+          ></Image>
+        </div>
       </div>
     </>
   );

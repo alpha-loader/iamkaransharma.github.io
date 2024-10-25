@@ -1,14 +1,13 @@
-
 .header_gradient {
   display: flex;
   flex-direction: column;
-  width: 1196px;
-  height: 1500px;
+  max-width: 85vw;
+  height: fit-content;
   background-clip: content-box;
   margin: auto;
-  margin-top: -190px;
-
-  background-image: linear-gradient(to top, #FFFFFF , #1657009c);
+  /* margin-top: -190px; */
+  margin-top: 20vh;
+  background-image: linear-gradient(to top, #ffffff, #1657009c);
 }
 
 .header_gradient_main {
@@ -16,100 +15,176 @@
   display: flex;
   flex-direction: column;
   align-items: left;
-
-  width: 1192px;
-  height: 1496px;
-
   background-color: #466765;
   margin: auto;
   margin-top: 2px;
   /* border: 2px solid red; */
-
 }
 
-
-
-
-.up_vector{
-    position: relative;
-    /* border: 2px solid red; */
-
+.up_vector {
+  z-index: 12;
+  right: -6%;
+  top: -0.3%;
+  position: absolute;
+  width: 20vw;
+  height: 40vh;
 }
 
-.up_vector img{
-    position: relative;
-    /* border: 2px solid red; */
-    left: 830px;
-
-
-}
-
-.down_vector{
-    position: relative;
-    /* border: 2px solid red; */
-    right: 130px;
-    margin-top: -180px;
-    z-index: -12;
-
+.down_vector {
+  z-index: 12;
+  left: -6.5%;
+  bottom: -0.5%;
+  position: absolute;
+  width: 20vw;
+  height: 40vh;
 }
 
 .outer_box {
-    /* border: 2px solid red; */
-    width: fit-content;
-    height: fit-content;
-    margin: auto;
+  border: 2px solid transparent;
+  width: fit-content;
+  height: fit-content;
+  margin: auto;
+  position: relative;
+  padding-bottom: 20vh;
+  margin-top: -12vh;
 }
 
-.main_heading p{
-    font-size: 56px;
-    margin:70px 0px 0 121px ;
-    color: #43F09F;
-    font-weight: bold;
-    font-weight: 500;
+.main_heading p {
+  font-size: 56px;
+  /* margin: 7% 0% 0% 17%; */
+  margin: 7% 0% 0% 10%;
+  color: #43f09f;
+  font-weight: bold;
+  font-weight: 500;
+}
+
+.underline {
+  width: 550px;
+  height: 10px;
+  margin-left: 10%;
+  background-color: #43f09f;
+}
+
+.help_text {
+  width: 70%;
+  margin: auto;
+  margin-top: 70px;
+}
+
+.help_text p {
+  font-size: 28px;
+  color: white;
+  margin-top: 40px;
+  line-height: 2.8rem;
+  word-spacing: 0.2rem;
+}
+
+.main_btn {
+  width: 33%;
+  height: 60px;
+  font-size: 28px;
+  font-weight: 700;
+  border: 2px solid #4ef96d;
+  color: #43f09f;
+  background-color: #245754;
+  border-radius: 7px;
+  margin-top: 40px;
+  box-shadow: 3px 3px 6px 0.1px rgb(128, 128, 128);
+  padding: 5px;
+  margin-bottom: 70px;
+}
+
+.help_text button:hover {
+  border: 2px solid #42d55d;
+  color: #3bce89;
+  background-color: #112a20;
+  cursor: pointer;
+  box-shadow: 3px 3px 6px 0.1px rgb(105, 105, 105);
+}
+
+/* Tablet */
+
+@media only screen and (min-width: 610px) and (max-width: 1010px) {
+  .main_heading p {
+    font-size: 33px;
   }
 
   .underline {
-    width:50%;
-    height:10px;
-    margin-left: 121px;
-    background-color: #43F09F;
+    width: 305px;
+    height: 5px;
+    margin-left: 10%;
+    background-color: #43f09f;
+  }
 
+  .help_text p {
+    font-size: 18px;
+    color: white;
+    margin-top: 40px;
+    line-height: 1.8rem;
+    word-spacing: 0.2rem;
+    text-align: left;
   }
 
   .help_text {
-    width: 70%;
-    margin: auto;
-    margin-top: 70px;
-  }
-
-  .help_text p{
-   font-size: 28px;
-   color:white;
-   margin-top: 40px;
-   line-height: 2.8rem;
-   word-spacing: 0.2rem;
+    width: 80%;
+    margin-top: 10px;
   }
 
   .main_btn {
-    width:33%;
-    height:60px;
-    font-size: 28px;
-    font-weight:700;
-    border: 2px solid #4EF96D;
-    color: #43F09F;
-    background-color: #245754;
-    border-radius: 7px;
-    margin-top: 40px;
-    box-shadow: 3px 3px 6px 0.1px rgb(128, 128, 128);
-    padding: 5px;
+    width: 40%;
+    height: 50px;
+    font-size: 22px;
+    font-weight: 500;
+  }
+}
+
+/* Mobile */
+@media only screen and (max-width: 610px) {
+  .header_gradient {
+    max-width: 92vw;
+    margin-top: 70px;
   }
 
-  .help_text button:hover{
-    border: 2px solid #42d55d;
-    color: #3bce89;
-    background-color: #112a20;
-    cursor: pointer;
-    box-shadow: 3px 3px 6px 0.1px rgb(105, 105, 105);
+  .main_heading p {
+    font-size: 27px;
   }
 
- 
+  .underline {
+    width: 255px;
+    height: 5px;
+    margin-left: 10%;
+    background-color: #43f09f;
+  }
+
+  .help_text p {
+    font-size: 16px;
+    color: white;
+    margin-top: 30px;
+    line-height: 1.5rem;
+    word-spacing: 0.2rem;
+    text-align: left;
+  }
+
+  .help_text {
+    width: 80%;
+    margin-top: 10px;
+  }
+
+  .main_btn {
+    width: 50%;
+    height: 50px;
+    font-size: 18px;
+    font-weight: 400;
+  }
+
+  .up_vector {
+    right: -6%;
+    top: -6.5%;
+  }
+
+  .down_vector {
+    left: -6.5%;
+    bottom: -0.3%;
+
+  }
+}

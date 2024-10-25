@@ -1,14 +1,19 @@
+"use client";
 import Image from "next/image";
 import classes from "@/components//contact/contact.module.css";
 import appleDots from "@/public/assets/Apple Dots.svg";
 import messageVector from "@/public/assets/Vector.svg";
+import messageVector2 from "@/public/assets/messageVector.svg";
+import { useState } from "react";
 
 export default function Contact() {
+  const [showActiveImage, setShowActiveImage] = useState(false);
+
+
   return (
     <>
-      <div className={classes.header_gradient}>
+      <div className={classes.header_gradient}> 
         <main className={classes.header_gradient_main}>
-          
           <div className={classes.sub_header_gradient}>
             <main className={classes.sub_header_gradient_main}>
               <Image src={appleDots} alt="Apple Dots" priority></Image>
@@ -17,15 +22,15 @@ export default function Contact() {
 
           <section>
             <div className={classes.heading}>
-              <h2>Let’s talk</h2>
+              <h2>Let&apos;s talk</h2>
             </div>
             <p>
               Behind this profile too, is a person who love to connect, discuss
               ideas, sharing trip experiences, singing and south Indian food.
             </p>
             <p>
-              Drop me an email, and let's schedule a meetup to explore how we
-              can bring your ideas to life."
+              Drop me an email, and let&apos;s schedule a meetup to explore how we
+              can bring your ideas to life.
             </p>
             <form>
               <div>
@@ -69,10 +74,18 @@ export default function Contact() {
                   <label htmlFor="not_sure">Not sure</label>
                 </span>
               </div>
-              <button className={classes.form_button}>
+              <button
+                className={classes.form_button}
+                onMouseOver={() => setShowActiveImage(true)}
+                onMouseOut={() => setShowActiveImage(false)}
+              >
                 Send message
                 <span className={classes.btn_image}>
-                  <Image src={messageVector} alt="message"></Image>
+                  {showActiveImage ? (
+                    <Image src={messageVector2} alt="message"></Image>
+                  ) : (
+                    <Image src={messageVector} alt="message"></Image>
+                  )}
                 </span>
               </button>
             </form>

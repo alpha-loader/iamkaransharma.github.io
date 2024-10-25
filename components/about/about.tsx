@@ -1,4 +1,3 @@
-"use client";
 
 import classes from "@/components/about/about.module.css";
 import data from "@/lib/about";
@@ -10,16 +9,16 @@ export default function About() {
   return (
     <>
       <div className={classes.header_gradient}>
-        <main className={classes.header_gradient_main}>
-          <div className={classes.about_tags}>
-            <p>my Journey</p>
+        <main className={classes.header_gradient_main} >
+          <div className={classes.about_tags} >
+            <p style={{marginBottom:'0px'}}>my Journey</p>
           </div>
 
           <div className={classes.box}>
             <section className={classes.main_section}>
-              <div className={classes.left_section} key="left_section">
+              <div className={classes.left_section} key="left_section" >
                 {data.map((objectData) => {
-                  let odd: Boolean = true;
+                  let odd: boolean = true;
                   if (objectData.id % 2 === 0) {
                     odd = false;
                   }
@@ -44,7 +43,7 @@ export default function About() {
                 })}
               </div>
 
-              <div className={classes.mid_section} key="mid_section">
+              <div className={classes.mid_section} key="mid_section" >
                 {data.map((objectData) => {
                   if (objectData.id === 8) {
                     return (
@@ -67,7 +66,7 @@ export default function About() {
 
               <div className={classes.right_section} key="right_section">
                 {data.map((objectData) => {
-                  let odd: Boolean = true;
+                  let odd: boolean = true;
                   if (objectData.id % 2 === 0) {
                     odd = false;
                   }
