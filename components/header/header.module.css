@@ -24,16 +24,20 @@
   background-image: linear-gradient(to right, #466765, #466765);
 }
 
-.header_gradient_main div {
+
+
+.paragraphs {
   display: flex;
   flex-direction: column;
   align-items: left;
   margin-top: 10%;
   margin-left: 10%;
+  /* border: 2px solid blue; */
 }
 
-.header_gradient_main p {
-  font-size: 53px;
+.paragraphs div span  {
+  font-size: 45px;
+  font-family: 'Monda';
   font-weight: bold;
   width: fit-content;
   background: linear-gradient(to right, #fddf97, #97855a);
@@ -56,6 +60,7 @@
 
 .header_gradient_main h3 {
   font-size: 27px;
+  font-family: 'fjord one';
   max-width: 90%;
   font-weight: 200;
   background: linear-gradient(to right, #fddf97, #97855a);
@@ -85,6 +90,10 @@
   height: 113px;
   width: 218px;
 }
+.hero_content{
+/* border: 2px solid red; */
+width:120%
+}
 
 .hero_image img {
   /* border: 2px solid red; */
@@ -106,12 +115,17 @@
   }
 
   .header_gradient_main p {
-    font-size: 33px;
+    font-size: 32px;
     line-height: 1em;
   }
 
+  .paragraphs div span  {
+    font-size: 34px;
+    line-height: 1.18em;
+  }
+
   .header_gradient_main h3 {
-    font-size: 15px;
+    font-size: 17px;
     font-weight: 400;
   }
 
@@ -138,18 +152,29 @@
     max-width: 99%;
   }
 
+  .paragraphs {
+    margin-left: 7%;
+    /* border: 2px solid blue; */
+  }
+
+  .author {
+    margin-right: 15px;
+  }
+  
+
   .header_gradient_main {
     width: 99.8%;
   }
 
-  .header_gradient_main p {
-    font-size: 22px;
-    line-height: 0.7em;
+  .paragraphs div span  {
+    font-size: 18px;
+    line-height: 1.12em;
   }
 
   .header_gradient_main h3 {
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 300;
+
   }
 
   .author {
@@ -168,4 +193,10 @@
     height: 30px;
     width: 58px;
   }
+
+  
+.header_gradient_main section {
+  margin-left: 7%;
+}
+
 }

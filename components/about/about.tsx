@@ -11,7 +11,7 @@ export default function About() {
       <div className={classes.header_gradient}>
         <main className={classes.header_gradient_main} >
           <div className={classes.about_tags} >
-            <p style={{marginBottom:'0px'}}>my Journey</p>
+            <p style={{marginBottom:'0px', fontFamily:'Monda'}}>my Journey</p>
           </div>
 
           <div className={classes.box}>
@@ -30,12 +30,14 @@ export default function About() {
                             .map((str) => `<h4>${str}</h4>`)
                             .join("\n")}
                           id={objectData.id}
+                          type="odd"
                         />
                       ) : (
                         <AboutImage
                           src={objectData.src}
                           alt={objectData.alt}
                           id={objectData.id}
+                          type="even"
                         />
                       )}
                     </React.Fragment>
@@ -77,6 +79,7 @@ export default function About() {
                           src={objectData.src}
                           alt={objectData.alt}
                           id={objectData.id}
+                          type="odd"
                         />
                       ) : (
                         <AboutText
@@ -84,6 +87,7 @@ export default function About() {
                             .map((str) => `<h4>${str}</h4>`)
                             .join("\n")}
                           id={objectData.id}
+                          type="even"
                         />
                       )}
                     </React.Fragment>
@@ -93,7 +97,7 @@ export default function About() {
             </section>
           </div>
           <div className={classes.about_tags}>
-            <p>is in Progress...</p>
+            <p style={{fontFamily:'Monda'}}>is in Progress...</p>
           </div>
         </main>
       </div>

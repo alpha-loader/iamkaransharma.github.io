@@ -5,14 +5,32 @@ import appleDots from "@/public/assets/Apple Dots.svg";
 import messageVector from "@/public/assets/Vector.svg";
 import messageVector2 from "@/public/assets/messageVector.svg";
 import { useState } from "react";
+import { useRef } from "react";
+import { motion, useInView } from "framer-motion";
 
 export default function Contact() {
   const [showActiveImage, setShowActiveImage] = useState(false);
 
+  const h2Ref = useRef(null);
+  const h2RefIsInView = useInView(h2Ref, { once: true });
+  const paraOneRef = useRef(null);
+  const paraOneRefIsInView = useInView(paraOneRef, { once: true });
+  const paraTwoRef = useRef(null);
+  const paraTwoRefIsInView = useInView(paraTwoRef, { once: true });
+  const nameRef = useRef(null);
+  const nameRefIsInView = useInView(nameRef, { once: true });
+  const emailRef = useRef(null);
+  const emailRefIsInView = useInView(emailRef, { once: true });
+  const messageRef = useRef(null);
+  const messageRefIsInView = useInView(messageRef, { once: true });
+  const radioRef = useRef(null);
+  const radioRefIsInView = useInView(radioRef, { once: true });
+  const buttonRef = useRef(null);
+  const buttonRefIsInView = useInView(buttonRef, { once: true });
 
   return (
     <>
-      <div className={classes.header_gradient}> 
+      <div className={classes.header_gradient}>
         <main className={classes.header_gradient_main}>
           <div className={classes.sub_header_gradient}>
             <main className={classes.sub_header_gradient_main}>
@@ -22,26 +40,53 @@ export default function Contact() {
 
           <section>
             <div className={classes.heading}>
-              <h2>Let&apos;s talk</h2>
+              <motion.h2
+                ref={h2Ref}
+                initial={{ opacity: 0, x: -20 }}
+                animate={h2RefIsInView ? { opacity: 1, x: 0 } : {}}
+                transition={{ duration: 1, ease: "easeOut" }}
+              >
+                Let&apos;s talk
+              </motion.h2>
             </div>
-            <p>
+
+            <motion.p  ref={paraOneRef}
+                initial={{ opacity: 0, y: 20 }}
+                animate={paraOneRefIsInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 1, ease: "easeOut" }}>
               Behind this profile too, is a person who love to connect, discuss
               ideas, sharing trip experiences, singing and south Indian food.
-            </p>
-            <p>
-              Drop me an email, and let&apos;s schedule a meetup to explore how we
-              can bring your ideas to life.
-            </p>
+            </motion.p>
+
+            <motion.p  ref={paraTwoRef}
+                initial={{ opacity: 0, y: +20 }}
+                animate={paraTwoRefIsInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 1, ease: "easeOut" }}>
+              Drop me an email, and let&apos;s schedule a meetup to explore how
+              we can bring your ideas to life.
+            </motion.p>
+
             <form>
-              <div>
+              <motion.div  ref={nameRef}
+                initial={{ opacity: 0, y: 20 }}
+                animate={nameRefIsInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 1, ease: "easeOut" }}>
                 <label htmlFor="name">Full name</label>
                 <input type="text" id="name" name="name" required></input>
-              </div>
-              <div>
+              </motion.div>
+
+              <motion.div  ref={emailRef}
+                initial={{ opacity: 0, y: 20 }}
+                animate={emailRefIsInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 1, ease: "easeOut" }}>
                 <label htmlFor="email">Email adress</label>
                 <input type="email" id="email" name="email" required></input>
-              </div>
-              <div>
+              </motion.div>
+
+              <motion.div  ref={messageRef}
+                initial={{ opacity: 0, y: 20 }}
+                animate={messageRefIsInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 1, ease: "easeOut" }}>
                 <label htmlFor="your_message">Your message</label>
                 <textarea
                   rows={5}
@@ -50,9 +95,13 @@ export default function Contact() {
                   name="your_message"
                   required
                 ></textarea>
-              </div>
-              <div className={classes.radio_button}>
-                <span>
+              </motion.div >
+
+              <motion.div  ref={radioRef}
+                initial={{ opacity: 0, y: 20 }}
+                animate={radioRefIsInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 1, ease: "easeOut" }} className={classes.radio_button}>
+                <span >
                   <input
                     type="radio"
                     name="radio"
@@ -73,8 +122,13 @@ export default function Contact() {
                   ></input>
                   <label htmlFor="not_sure">Not sure</label>
                 </span>
-              </div>
-              <button
+              </motion.div>
+              <motion.button
+               ref={buttonRef}
+               initial={{ opacity: 0, y: 20 }}
+               animate={buttonRefIsInView ? { opacity: 1, y: 0 } : {}}
+               transition={{ duration: 1, ease: "easeOut" }}
+
                 className={classes.form_button}
                 onMouseOver={() => setShowActiveImage(true)}
                 onMouseOut={() => setShowActiveImage(false)}
@@ -87,7 +141,7 @@ export default function Contact() {
                     <Image src={messageVector} alt="message"></Image>
                   )}
                 </span>
-              </button>
+              </motion.button>
             </form>
           </section>
         </main>

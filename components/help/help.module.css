@@ -56,6 +56,7 @@
   color: #43f09f;
   font-weight: bold;
   font-weight: 500;
+  font-family: 'Monda';
 }
 
 .underline {
@@ -77,6 +78,7 @@
   margin-top: 40px;
   line-height: 2.8rem;
   word-spacing: 0.2rem;
+  font-family: 'poppins';
 }
 
 .main_btn {

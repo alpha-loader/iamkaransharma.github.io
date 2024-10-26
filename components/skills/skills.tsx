@@ -3,7 +3,7 @@
 import classes from "@/components/skills/skills.module.css";
 import Image from "next/image";
 import vectorRectangle from "@/public/assets/Group 2.png";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, useInView } from "framer-motion";
 import { useRef } from "react";
 
 const skillsData = {
@@ -46,13 +46,8 @@ const skillsData = {
 };
 
 export default function Skills() {
-  const scrollY = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({ container: scrollY });
-  const opacity = useTransform(
-    scrollYProgress,
-    [0, 0.06, 0.2, 1],
-    [1, 0.5, 0.07, 0]
-  );
+  const vectorRef = useRef<HTMLDivElement>(null);
+  const isInView = useInView(vectorRef, { once: true });
 
   return (
     <>
@@ -67,21 +62,18 @@ export default function Skills() {
         }}
       >
         <div className={classes.header_gradient}>
-          <main className={classes.header_gradient_main} ref={scrollY}>
+          <main className={classes.header_gradient_main}>
             <div className={classes.main_heading}>
-              <p>Skills & Experience</p>
+              <p className={classes.header_fade_out}>Skills & Experience</p>
             </div>
 
-            <motion.div
-              style={{ opacity: opacity }}
-              className={classes.skills_section}
-            >
+            <div className={classes.skills_section}>
               <p>Skills.</p>
               <h4>{skillsData.slills.map((item) => `${item} | `)}</h4>
-            </motion.div>
+            </div>
 
             <div className={classes.experience_section}>
-              <p>Experience.</p>
+              <p className={classes.experience_section}>Experience.</p>
               <div className={classes.experience}>
                 <section
                   key={skillsData.experienceBadge1.year}
@@ -114,14 +106,21 @@ export default function Skills() {
           </main>
         </div>
 
-        <div className={classes.vector}>
+        <motion.div
+          ref={vectorRef}
+          className={classes.vector}
+          initial={{ clipPath: "inset(0 100% 0 0)" }}
+          animate={isInView ? { clipPath: "inset(0 0 0 0)" } : {}}
+          transition={{ duration: 4, ease: "easeOut" }}
+          style={{ overflow: "hidden" }}
+        >
           <Image
             src={vectorRectangle}
             alt="Vector Graphics"
             priority
             fill
           ></Image>
-        </div>
+        </motion.div>
       </div>
     </>
   );

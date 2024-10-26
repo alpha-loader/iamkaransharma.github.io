@@ -259,6 +259,7 @@
   .heading h2 {
     font-size: 27px !important;
     font-weight: 400 !important;
+    font-family: 'poppins';
   }
 
   .header_gradient_main section {
@@ -272,6 +273,7 @@
     line-height: 1.3rem;
     word-spacing: 0.15rem;
     font-weight: 300;
+    font-family: 'poppins';
   }
 
   .header_gradient_main section form {
