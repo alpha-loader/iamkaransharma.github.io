@@ -7,9 +7,13 @@ import messageVector2 from "@/public/assets/messageVector.svg";
 import { useState } from "react";
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
+import emailjs from "emailjs-com";
+import Alert from "@/components/alert/alert";
 
 export default function Contact() {
   const [showActiveImage, setShowActiveImage] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [mailTrigger, setMailTrigger] = useState("");
 
   const h2Ref = useRef(null);
   const h2RefIsInView = useInView(h2Ref, { once: true });
@@ -28,9 +32,53 @@ export default function Contact() {
   const buttonRef = useRef(null);
   const buttonRefIsInView = useInView(buttonRef, { once: true });
 
+  const handleSubmit = (e: any) => {
+    e.preventDefault();
+    const fd = new FormData(e.target);
+    const formData = Object.fromEntries(fd.entries());
+    console.log(formData);
+
+    try {
+      setLoading(true);
+
+      emailjs.init(`${process.env.NEXT_PUBLIC_EMAIL_PUBLIC_API}`);
+      emailjs
+        .send(
+          `${process.env.NEXT_PUBLIC_EMAIL_SERVICE_ID}`,
+          `${process.env.NEXT_PUBLIC_EMAIL_TEMPLATE_ID}`,
+          {
+            from_name: formData.name,
+            to_name: "Karu",
+            message: formData.your_message,
+            reply_to: "education.karu@gmail.com",
+            send_resume: formData.send_resume === "true"
+              ? "Please send your resume."
+              : "I'm not sure about you sending your resume.",
+            email: formData.email,
+          }
+        )
+
+        .then((result) => {
+          setLoading(false);
+          setMailTrigger("success");
+          setTimeout(() => setMailTrigger(""), 2000);
+        })
+        .catch((error) => {
+          setLoading(false);
+          setMailTrigger("failed");
+          setTimeout(() => setMailTrigger(""), 2000);
+        });
+    } catch (error) {
+      console.log(error);
+      setLoading(false);
+      setMailTrigger("failed");
+      setTimeout(() => setMailTrigger(""), 2000);
+    }
+  };
+
   return (
     <>
-      <div className={classes.header_gradient}>
+      <div className={classes.header_gradient} id="contact">
         <main className={classes.header_gradient_main}>
           <div className={classes.sub_header_gradient}>
             <main className={classes.sub_header_gradient_main}>
@@ -50,43 +98,53 @@ export default function Contact() {
               </motion.h2>
             </div>
 
-            <motion.p  ref={paraOneRef}
-                initial={{ opacity: 0, y: 20 }}
-                animate={paraOneRefIsInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 1, ease: "easeOut" }}>
+            <motion.p
+              ref={paraOneRef}
+              initial={{ opacity: 0, y: 20 }}
+              animate={paraOneRefIsInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 1, ease: "easeOut" }}
+            >
               Behind this profile too, is a person who love to connect, discuss
               ideas, sharing trip experiences, singing and south Indian food.
             </motion.p>
 
-            <motion.p  ref={paraTwoRef}
-                initial={{ opacity: 0, y: +20 }}
-                animate={paraTwoRefIsInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 1, ease: "easeOut" }}>
+            <motion.p
+              ref={paraTwoRef}
+              initial={{ opacity: 0, y: +20 }}
+              animate={paraTwoRefIsInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 1, ease: "easeOut" }}
+            >
               Drop me an email, and let&apos;s schedule a meetup to explore how
               we can bring your ideas to life.
             </motion.p>
 
-            <form>
-              <motion.div  ref={nameRef}
+            <form onSubmit={handleSubmit}>
+              <motion.div
+                ref={nameRef}
                 initial={{ opacity: 0, y: 20 }}
                 animate={nameRefIsInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 1, ease: "easeOut" }}>
+                transition={{ duration: 1, ease: "easeOut" }}
+              >
                 <label htmlFor="name">Full name</label>
                 <input type="text" id="name" name="name" required></input>
               </motion.div>
 
-              <motion.div  ref={emailRef}
+              <motion.div
+                ref={emailRef}
                 initial={{ opacity: 0, y: 20 }}
                 animate={emailRefIsInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 1, ease: "easeOut" }}>
+                transition={{ duration: 1, ease: "easeOut" }}
+              >
                 <label htmlFor="email">Email adress</label>
                 <input type="email" id="email" name="email" required></input>
               </motion.div>
 
-              <motion.div  ref={messageRef}
+              <motion.div
+                ref={messageRef}
                 initial={{ opacity: 0, y: 20 }}
                 animate={messageRefIsInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 1, ease: "easeOut" }}>
+                transition={{ duration: 1, ease: "easeOut" }}
+              >
                 <label htmlFor="your_message">Your message</label>
                 <textarea
                   rows={5}
@@ -95,16 +153,19 @@ export default function Contact() {
                   name="your_message"
                   required
                 ></textarea>
-              </motion.div >
+              </motion.div>
 
-              <motion.div  ref={radioRef}
+              <motion.div
+                ref={radioRef}
                 initial={{ opacity: 0, y: 20 }}
                 animate={radioRefIsInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 1, ease: "easeOut" }} className={classes.radio_button}>
-                <span >
+                transition={{ duration: 1, ease: "easeOut" }}
+                className={classes.radio_button}
+              >
+                <span>
                   <input
                     type="radio"
-                    name="radio"
+                    name="send_resume"
                     value="true"
                     id="share_resume"
                     required
@@ -114,7 +175,7 @@ export default function Contact() {
 
                   <input
                     type="radio"
-                    name="radio"
+                    name="send_resume"
                     value="false"
                     required
                     id="not_sure"
@@ -124,16 +185,16 @@ export default function Contact() {
                 </span>
               </motion.div>
               <motion.button
-               ref={buttonRef}
-               initial={{ opacity: 0, y: 20 }}
-               animate={buttonRefIsInView ? { opacity: 1, y: 0 } : {}}
-               transition={{ duration: 1, ease: "easeOut" }}
-
+                ref={buttonRef}
+                initial={{ opacity: 0, y: 20 }}
+                animate={buttonRefIsInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 1, ease: "easeOut" }}
                 className={classes.form_button}
                 onMouseOver={() => setShowActiveImage(true)}
                 onMouseOut={() => setShowActiveImage(false)}
+                disabled={loading}
               >
-                Send message
+                {loading ? "Sending..." : "Send message"}
                 <span className={classes.btn_image}>
                   {showActiveImage ? (
                     <Image src={messageVector2} alt="message"></Image>
@@ -146,6 +207,13 @@ export default function Contact() {
           </section>
         </main>
       </div>
+      {mailTrigger === "success" ? (
+        <Alert text="Thank you for your message 😃" type="success"></Alert>
+      ) : mailTrigger === "failed" ? (
+        <Alert text="I didn't receive your message 😢" type="danger"></Alert>
+      ) : (
+        ""
+      )}
     </>
   );
 }

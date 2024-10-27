@@ -24,8 +24,6 @@
   background-image: linear-gradient(to right, #466765, #466765);
 }
 
-
-
 .paragraphs {
   display: flex;
   flex-direction: column;
@@ -35,9 +33,9 @@
   /* border: 2px solid blue; */
 }
 
-.paragraphs div span  {
+.paragraphs div span {
   font-size: 45px;
-  font-family: 'Monda';
+  font-family: "Monda";
   font-weight: bold;
   width: fit-content;
   background: linear-gradient(to right, #fddf97, #97855a);
@@ -60,7 +58,7 @@
 
 .header_gradient_main h3 {
   font-size: 27px;
-  font-family: 'fjord one';
+  font-family: "fjord one";
   max-width: 90%;
   font-weight: 200;
   background: linear-gradient(to right, #fddf97, #97855a);
@@ -90,9 +88,9 @@
   height: 113px;
   width: 218px;
 }
-.hero_content{
-/* border: 2px solid red; */
-width:120%
+.hero_content {
+  /* border: 2px solid red; */
+  width: 120%;
 }
 
 .hero_image img {
@@ -119,7 +117,7 @@ width:120%
     line-height: 1em;
   }
 
-  .paragraphs div span  {
+  .paragraphs div span {
     font-size: 34px;
     line-height: 1.18em;
   }
@@ -160,13 +158,12 @@ width:120%
   .author {
     margin-right: 15px;
   }
-  
 
   .header_gradient_main {
     width: 99.8%;
   }
 
-  .paragraphs div span  {
+  .paragraphs div span {
     font-size: 18px;
     line-height: 1.12em;
   }
@@ -174,7 +171,6 @@ width:120%
   .header_gradient_main h3 {
     font-size: 12px;
     font-weight: 300;
-
   }
 
   .author {
@@ -194,9 +190,7 @@ width:120%
     width: 58px;
   }
 
-  
-.header_gradient_main section {
-  margin-left: 7%;
-}
-
+  .header_gradient_main section {
+    margin-left: 7%;
+  }
 }

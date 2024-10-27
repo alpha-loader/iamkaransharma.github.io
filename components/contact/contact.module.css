@@ -14,7 +14,7 @@
   content: "";
   width: 99.9%;
   height: fit-content;
-  background-color: #31382e;
+  background-color: #202020;
   margin: auto;
   margin-top: 2px;
   margin-bottom: 2px;
@@ -178,7 +178,7 @@
   overflow-y: auto;
   border-top-right-radius: 22px;
   border-top-left-radius: 22px;
-  background-image: linear-gradient(to right, #1a282f, #313935, #343c36);
+  background-image: linear-gradient(to right, #000000, #5c5c5c, #000000);
 }
 
 /* Tablet */

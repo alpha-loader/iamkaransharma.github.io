@@ -8,7 +8,7 @@ import Footer from "@/components/footer/footer";
 import { motion, useScroll, useSpring } from "framer-motion";
 import classes from "./page.module.css";
 
-export default async function Home() {
+export default function Home() {
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,

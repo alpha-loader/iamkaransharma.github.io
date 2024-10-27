@@ -109,6 +109,11 @@ export default function Help() {
                 animate={buttonRefIsInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 1, ease: "easeOut" }}
                 className={classes.main_btn}
+                onClick={() => {
+                  document
+                    .getElementById("contact")
+                    ?.scrollIntoView({ behavior: "smooth" });
+                }}
               >
                 Drop an email
               </motion.button>

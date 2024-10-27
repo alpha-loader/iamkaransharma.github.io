@@ -5,6 +5,7 @@ import Image from "next/image";
 import vectorRectangle from "@/public/assets/Group 2.png";
 import { motion, useScroll, useTransform, useInView } from "framer-motion";
 import { useRef } from "react";
+import scrollSvg from "@/public/assets/scroll.svg";
 
 const skillsData = {
   slills: [
@@ -49,6 +50,13 @@ export default function Skills() {
   const vectorRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(vectorRef, { once: true });
 
+  const vectorImageRef = useRef<HTMLDivElement>(null);
+  const vectorImageRefIsInView = useInView(vectorImageRef, { once: true });
+
+  const scrollRef = useRef(null);
+  const { scrollYProgress } = useScroll({ container: scrollRef });
+  const opacity = useTransform(scrollYProgress, [0, 0.01], [1, 0]);
+
   return (
     <>
       <div
@@ -62,7 +70,7 @@ export default function Skills() {
         }}
       >
         <div className={classes.header_gradient}>
-          <main className={classes.header_gradient_main}>
+          <main className={classes.header_gradient_main} ref={scrollRef}>
             <div className={classes.main_heading}>
               <p className={classes.header_fade_out}>Skills & Experience</p>
             </div>
@@ -103,6 +111,30 @@ export default function Skills() {
                 </section>
               </div>
             </div>
+            <motion.div
+              ref={vectorImageRef}
+              initial={{ clipPath: "inset( 0 0 100% 0)" }}
+              animate={
+                vectorImageRefIsInView ? { clipPath: "inset(0 0 0 0)" } : {}
+              }
+              transition={{ duration: 1.2, ease: "easeOut", repeat: Infinity }}
+              style={{
+                fontSize: "30px",
+                position: "sticky",
+                bottom: "2%",
+                marginRight: "2%",
+                alignSelf: "flex-end",
+                opacity: opacity,
+              }}
+            >
+              <Image
+                src={scrollSvg}
+                alt="Vector Graphics"
+                priority
+                height={60}
+                width={40}
+              ></Image>
+            </motion.div>
           </main>
         </div>
 

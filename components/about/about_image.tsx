@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import classes from "@/components/about/about_image.module.css";
 
