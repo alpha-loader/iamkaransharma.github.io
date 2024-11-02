@@ -22,14 +22,14 @@ export default function Header() {
             <div className={classes.paragraphs}>
               {stopWritingFirstPara === true && (
                 <div>
-                  <span>Hi. I'm Name.</span>
+                  <span>Hi. I&apos;m Karan.</span>
                 </div>
               )}
               {stopWritingFirstPara === false && (
                 <Typewriter
                   onInit={(typewriter) => {
                     typewriter
-                      .typeString(`Hi. I'm Name.`)
+                      .typeString(`Hi. I'm Karan.`)
 
                       .pauseFor(600)
                       .typeString(` (Karu)`)
@@ -43,7 +43,7 @@ export default function Header() {
                   options={{
                     autoStart: true,
                     loop: false,
-                    delay: 100,
+                    delay: 80,
                     cursor: "|",
 
                     deleteSpeed: 50,
@@ -63,19 +63,19 @@ export default function Header() {
                     onInit={(typewriter) => {
                       typewriter
                         .typeString("A React")
-                        .pauseFor(100)
-                        .deleteChars(3)
-                        .typeString("act-Native")
-                        .pauseFor(100)
-                        .deleteChars(12)
+                        .pauseFor(200)
+                        .deleteChars(5)
+                        // .typeString("act-Native")
+                        // .pauseFor(100)
+                        // .deleteChars(12)
                         .typeString("Node.js")
-                        .pauseFor(100)
+                        .pauseFor(200)
                         .deleteChars(7)
-                        .typeString("Next.js")
-                        .pauseFor(100)
-                        .deleteChars(7)
+                        // .typeString("Next.js")
+                        // .pauseFor(100)
+                        // .deleteChars(7)
                         .typeString("DevOps Eng.")
-                        .pauseFor(100)
+                        .pauseFor(200)
                         .deleteChars(11)
                         .typeString(
                           "<span>&lt;<span>FullStack/<span>&gt;<span>"

@@ -13,7 +13,7 @@ export default function AboutText(props: {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
 
-  let position = props.type === "odd" ? -30 : 30;
+  const position = props.type === "odd" ? -30 : 30;
 
   return (
     <motion.div

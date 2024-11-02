@@ -156,11 +156,49 @@
 
 /* Tablet */
 
-@media only screen and (min-width: 610px) and (max-width: 1010px) {
+@media only screen and (min-width: 510px) and (max-width: 1010px) {
+
+
+  .skills_section p {
+
+    font-size: 4vh;
+    margin: 7% 0px 0 10%;
+
+  }
+
+  .experience_section p {
+    font-size: 4.5vh;
+    margin: 7% 0px 0 10%;
+  }
+
+  .skills_section h4 {
+    font-size: 18px;
+    margin: 7% 2% 0 7%;
+    font-weight: 400;
+    line-height: 1.8rem;
+    width: 40vw;
+  }
+
+  .experience {
+    width: 38vw;
+    margin-top: 5vh;
+    margin-right: 4vw;
+    line-height: 1.6rem;
+  }
+
+  .experience h4 {
+    font-weight: 100;
+    font-size: 16px;
+    color: white;
+    margin-top: 10px;
+    line-height: 1.6rem;;
+
+  }
+
 }
 
 /* Mobile */
-@media only screen and (max-width: 610px) {
+@media only screen and (max-width: 510px) {
   .header_gradient {
     max-width: 95vw;
     height: 600px;
@@ -173,12 +211,14 @@
   .main_heading p {
     font-size: 3.5vh;
     margin: 0% 0px 0 0%;
-    font-weight: 450;
+    font-weight: 750;
   }
 
   .skills_section p {
     font-size: 2.7vh;
     margin: 0% 0px 0 7%;
+    font-weight: 500;
+    letter-spacing: 0.5px;
   }
 
   .skills_section h4 {
@@ -188,12 +228,15 @@
     line-height: 1.4rem;
     width: 100%;
     margin-right: 2.5vw;
+
   }
 
   .experience_section p {
     font-size: 2.7vh;
     margin: 10% 0px 0 7%;
     color: #43f09f;
+    font-weight: 500;
+    letter-spacing: 0.5px;
   }
 
   .header_gradient_main::-webkit-scrollbar {
@@ -251,5 +294,12 @@
   }
   .skills_section {
     margin-top: 0%;
+  }
+
+  .vector_arrow{
+    bottom: 0.8% !important;
+    margin-right: 1% !important;
+    height:60px;
+    width:30px;
   }
 }

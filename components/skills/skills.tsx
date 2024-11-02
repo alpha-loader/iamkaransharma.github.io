@@ -112,6 +112,7 @@ export default function Skills() {
               </div>
             </div>
             <motion.div
+            className={classes.vector_arrow}
               ref={vectorImageRef}
               initial={{ clipPath: "inset( 0 0 100% 0)" }}
               animate={
@@ -119,7 +120,6 @@ export default function Skills() {
               }
               transition={{ duration: 1.2, ease: "easeOut", repeat: Infinity }}
               style={{
-                fontSize: "30px",
                 position: "sticky",
                 bottom: "2%",
                 marginRight: "2%",
@@ -131,8 +131,8 @@ export default function Skills() {
                 src={scrollSvg}
                 alt="Vector Graphics"
                 priority
-                height={60}
-                width={40}
+                height={50}
+                width={30}
               ></Image>
             </motion.div>
           </main>

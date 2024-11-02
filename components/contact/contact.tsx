@@ -32,9 +32,9 @@ export default function Contact() {
   const buttonRef = useRef(null);
   const buttonRefIsInView = useInView(buttonRef, { once: true });
 
-  const handleSubmit = (e: any) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const fd = new FormData(e.target);
+    const fd = new FormData(e.target as HTMLFormElement);
     const formData = Object.fromEntries(fd.entries());
     console.log(formData);
 
@@ -51,22 +51,36 @@ export default function Contact() {
             to_name: "Karu",
             message: formData.your_message,
             reply_to: "education.karu@gmail.com",
-            send_resume: formData.send_resume === "true"
-              ? "Please send your resume."
-              : "I'm not sure about you sending your resume.",
+            send_resume:
+              formData.send_resume === "true"
+                ? "Please send your resume."
+                : "I'm not sure about you sending your resume.",
             email: formData.email,
           }
         )
 
-        .then((result) => {
+        .then(() => {
           setLoading(false);
           setMailTrigger("success");
-          setTimeout(() => setMailTrigger(""), 2000);
+          setTimeout(() => {
+            setMailTrigger("");
+            setTimeout(() => {
+              window.scrollTo(0, 0);
+              window.location.reload();
+            }, 1000);
+          }, 2000);
         })
         .catch((error) => {
+          console.log(error)
           setLoading(false);
           setMailTrigger("failed");
-          setTimeout(() => setMailTrigger(""), 2000);
+          setTimeout(() => {
+            setMailTrigger("");
+            setTimeout(() => {
+              window.scrollTo(0, 0);
+              window.location.reload();
+            }, 1000);
+          }, 2000);
         });
     } catch (error) {
       console.log(error);

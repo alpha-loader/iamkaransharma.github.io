@@ -46,7 +46,7 @@
   margin: auto;
   position: relative;
   padding-bottom: 20vh;
-  margin-top: -12vh;
+  margin-top: -18vh;
 }
 
 .main_heading p {
@@ -106,7 +106,7 @@
 
 /* Tablet */
 
-@media only screen and (min-width: 610px) and (max-width: 1010px) {
+@media only screen and (min-width: 556px) and (max-width: 1010px) {
   .main_heading p {
     font-size: 33px;
   }
@@ -141,7 +141,7 @@
 }
 
 /* Mobile */
-@media only screen and (max-width: 610px) {
+@media only screen and (max-width: 556px) {
   .header_gradient {
     max-width: 92vw;
     margin-top: 70px;
@@ -181,7 +181,7 @@
 
   .up_vector {
     right: -6%;
-    top: -6.5%;
+    top: -6%;
   }
 
   .down_vector {

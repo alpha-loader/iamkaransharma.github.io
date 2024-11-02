@@ -21,7 +21,7 @@
   margin-top: 2px;
   margin-bottom: 2px;
   border-radius: 10px;
-  background-image: linear-gradient(to right, #466765, #466765);
+  background-image: linear-gradient(to right, #1f2726, #2a342f);
 }
 
 .paragraphs {
@@ -38,7 +38,7 @@
   font-family: "Monda";
   font-weight: bold;
   width: fit-content;
-  background: linear-gradient(to right, #fddf97, #97855a);
+  background: linear-gradient(to right, #43f09f, #33b377);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -61,7 +61,7 @@
   font-family: "fjord one";
   max-width: 90%;
   font-weight: 200;
-  background: linear-gradient(to right, #fddf97, #97855a);
+  background: linear-gradient(to right, #43f09f, #33b377);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -72,7 +72,7 @@
   font-size: 27px;
   max-width: 40%;
   font-weight: 100;
-  background: linear-gradient(to right, #fddf97, #97855a);
+  background: linear-gradient(to right, #43f09f, #33b377);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -103,9 +103,14 @@
   max-width: 511px;
 }
 
-@media only screen and (min-width: 610px) and (max-width: 1010px) {
+@media only screen and (min-width: 510px) and (max-width: 1010px) {
   .header_gradient {
     max-width: 90%;
+  }
+
+  .author {
+    margin-right: 30px;
+    margin-top: 15px;
   }
 
   .header_gradient_main {
@@ -118,12 +123,12 @@
   }
 
   .paragraphs div span {
-    font-size: 34px;
-    line-height: 1.18em;
+    font-size: 25px;
+    line-height: 1.16em;
   }
 
   .header_gradient_main h3 {
-    font-size: 17px;
+    font-size: 16px;
     font-weight: 400;
   }
 
@@ -140,18 +145,19 @@
   .signature {
     height: 55px;
     width: 110px;
-    margin-top: 5%;
+    margin-top: 2%;
     margin-left: 10%;
   }
 }
 
-@media only screen and (max-width: 610px) {
+@media only screen and (max-width: 510px) {
   .header_gradient {
     max-width: 99%;
   }
 
   .paragraphs {
-    margin-left: 7%;
+    margin-left: 10%;
+    margin-top: 12%;
     /* border: 2px solid blue; */
   }
 
@@ -175,6 +181,7 @@
 
   .author {
     font-size: 15px;
+    margin-right: 4%;
   }
 
   .hero_image img {
@@ -184,13 +191,14 @@
   }
 
   .signature {
-    margin-top: 5%;
+    margin-top: 4%;
     margin-left: 10%;
     height: 30px;
     width: 58px;
   }
 
   .header_gradient_main section {
-    margin-left: 7%;
+    margin-left: 10%;
+    margin-top: 7%;
   }
 }

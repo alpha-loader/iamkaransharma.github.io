@@ -23,7 +23,7 @@
 
 /* Tablet */
 
-@media only screen and (min-width: 610px) and (max-width: 1010px) {
+@media only screen and (min-width: 510px) and (max-width: 1010px) {
 
 
   .image {
@@ -50,7 +50,7 @@
 }
 
 
-@media only screen and (max-width: 610px) {
+@media only screen and (max-width: 510px) {
 
   .image img{
     height:80px;
@@ -59,7 +59,7 @@
   }
 
   .image {
-    height: 22vh;
+    height: 24vh;
     /* border: 2px solid red; */
 
   }

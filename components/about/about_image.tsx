@@ -15,7 +15,7 @@ export default function AboutImage(props: {
 }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
-  let position = props.type === "even" ? -30 : 30;
+  const position = props.type === "even" ? -30 : 30;
   return (
     <motion.div
       ref={ref}

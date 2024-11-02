@@ -221,7 +221,7 @@
   .header_gradient {
     width: 98vw;
     border-radius: 8px;
-    margin-top: 0px;
+    margin-top: -10vh;
   }
 
   .header_gradient_main {
